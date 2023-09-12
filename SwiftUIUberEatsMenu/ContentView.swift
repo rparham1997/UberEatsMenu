@@ -8,14 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var selectedOption: MenuBarOption = .japanese
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            HStack(spacing: 16) {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "arrow.left")
+                        .font(.title2)
+                }
+                
+                Text("Miami - South Beach")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                
+                Spacer()
+                
+                
+                Button {
+                    
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                        .font(.title2)
+                }
+                
+            }
+            .padding(.horizontal)
+            .foregroundColor(.black)
+            
+            // menu options list
+            
+            MenuOptionsList(selectedOptions: $selectedOption)
         }
-        .padding()
+        
     }
 }
 
